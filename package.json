@@ -1,0 +1,47 @@
+{
+  "name": "grunt-bpg",
+  "description": "Convert your images to the BPG format",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jmalonzo/grunt-bpg",
+  "author": {
+    "name": "Jan Alonzo",
+    "email": "jmalonzo@gmail.com",
+    "url": "https://www.janalonzo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jmalonzo/grunt-bpg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmalonzo/grunt-bpg/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jmalonzo/grunt-bpg/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "async": "~0.9.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.4"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.4"
+  },
+  "keywords": [
+    "gruntplugin",
+    "bpg",
+    "libbpg"
+  ]
+}
