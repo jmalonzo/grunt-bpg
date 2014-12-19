@@ -21,6 +21,7 @@
       "url": "https://github.com/jmalonzo/grunt-bpg/blob/master/LICENSE-MIT"
     }
   ],
+  "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
   },
@@ -42,6 +43,8 @@
   "keywords": [
     "gruntplugin",
     "bpg",
-    "libbpg"
+    "libbpg",
+    "image",
+    "photos"
   ]
 }
