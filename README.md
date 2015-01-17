@@ -92,30 +92,6 @@ Default value: `8`
 
 The compression level (1=fast, 9=slow, default = 8)
 
-#### options.alphaq
-Type: `Number`
-Default value: `28`
-
-The quantizer parameter for the alpha channel (same as the 'qp' param)
-
-#### options.hash
-Type: `Boolean`
-Default value: `false`
-
-Include the MD5 hash in HEVC bitstream
-
-#### options.keepmetadata
-Type: `Boolean`
-Default value: `false`
-
-Keep the metadata (from JPEG: EXIF, ICC profile, XMP, from PNG: ICC profile)
-
-#### options.verbose
-Type: `Boolean`
-Default value: `false`
-
-Show debug messages
-
 
 ### Usage Examples
 

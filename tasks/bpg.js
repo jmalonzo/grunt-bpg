@@ -8,7 +8,7 @@
  */
 
 /** bpgenc options
-BPG Image Encoder version 0.9.3
+BPG Image Encoder version 0.9.5
 usage: bpgenc [options] infile.[jpg|png]
 
 Main options:
@@ -25,14 +25,15 @@ Main options:
 -e encoder           select the HEVC encoder (jctvc, default = jctvc)
 -m level             select the compression level (1=fast, 9=slow, default = 8)
 
-Advanced options:
--alphaq              set quantizer parameter for the alpha channel (default = same as -q value)
--premul              store the color with premultiplied alpha
--limitedrange        encode the color data with the limited range of video
--hash                include MD5 hash in HEVC bitstream
--keepmetadata        keep the metadata (from JPEG: EXIF, ICC profile, XMP, from PNG: ICC profile)
--v                   show debug messages
-
+Animation options:
+-a                   generate animations from a sequence of images. Use %d or
+                     %Nd (N = number of digits) in the filename to specify the
+                     image index, starting from 0 or 1.
+-fps N               set the frame rate (default = 25)
+-loop N              set the number of times the animation is played. 0 means
+                     infinite (default = 0)
+-delayfile file      text file containing one number per image giving the
+                     display delay per image in centiseconds.
 */
 
 'use strict';
@@ -55,11 +56,7 @@ module.exports = function(grunt) {
       cfmt: 420,  // preferred chroma format
       color_space: 'ycbcr',  // preferred colour space
       bit_depth: 8,  // bit depth
-      lossless: false, // lossless mode
-      alphaq: 28,  // quantizer paramter for the alpha channel
-      hash: false,  // include MD5 hash in the HEVC bitstream
-      keepmetadata: false,  // Keep EXIF metadata
-      verbose: false  // set verbosity level
+      lossless: false // lossless mode
     });
 
     async.eachSeries(this.files, function(fd, next) {
@@ -109,15 +106,7 @@ module.exports = function(grunt) {
           args.push(options[o]);
         }
 
-        if (o === 'alphaq') {
-          args.push('-alphaq');
-          args.push(options[o]);
-        }
-
-        if (o === 'verbose' && options[o]) { args.push('-v');}
         if (o === 'lossless' && options[o]) { args.push('-lossless');}
-        if (o === 'keepmetadata' && options[o]) { args.push('-keepmetadata');}
-        if (o === 'hash' && options[o]) { args.push('-hash');}
       }
 
       args.push(fd.src);
