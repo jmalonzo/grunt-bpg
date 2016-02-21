@@ -1,7 +1,7 @@
 {
   "name": "grunt-bpg",
   "description": "Convert your images to the BPG format",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "homepage": "https://github.com/jmalonzo/grunt-bpg",
   "author": {
     "name": "Jan Alonzo",
